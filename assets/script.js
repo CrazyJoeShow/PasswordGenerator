@@ -19,9 +19,9 @@ function generatePassword() {
 		alert('Please enter a number between 8 and 128.');
 		throw new Error('User did not choos a lenth btween 8 and 128');
 	}
-	// ask is uppercase allowed.
+	// ask if uppercase allowed.
 	const upperCaseAllowed = confirm(
-		'Use lowercase letters in the new password?'
+		'Use uppercase letters in the new password?'
 	);
 	// ask if lowercase is allowed.
 	const lowerCaseAllowed = confirm(
@@ -33,20 +33,21 @@ function generatePassword() {
 	// ask if special characters are allowed.
 
 	const symbolsAllowed = confirm('Use special characters in the new password?');
+
 	// make a string of the selected characters made by the user
 	//starting with the string they will printed to
 	var availableCharacters = '';
 	if (lowerCaseAllowed === true) {
-		availableCharacters = availableCharacters.concat(lowerCaseString);
+		availableCharacters = availableCharacters.concat(upperCase);
 	}
 	if (upperCaseAllowed === true) {
-		availableCharacters = availableCharacters.concat(upperCaseCaseString);
+		availableCharacters = availableCharacters.concat(upperCaseCase);
 	}
 	if (numbersAllowed === true) {
-		availableCharacters = availableCharacters.concat(numbersString);
+		availableCharacters = availableCharacters.concat(numbers);
 	}
 	if (symbolsAllowed === true) {
-		availableCharacters = availableCharacters.concat(symbolsString);
+		availableCharacters = availableCharacters.concat(symbols);
 	}
 	// get random character form the array and add that to a string for each of the choices
 
