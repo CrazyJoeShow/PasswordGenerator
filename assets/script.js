@@ -2,6 +2,7 @@ var generateBtn = document.querySelector('#generate');
 // strings for characters in the password
 var upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 var lowerCase = 'abcdefghijklmnopqrstuvwxyz';
+var numbers = '0123456789';
 var symbols = '`~!@#$%^&*-_=+[]{};:,<.>?()';
 
 //Generat function
@@ -16,6 +17,7 @@ function generatePassword() {
 		var confirmedPassLength = desiredPassLength;
 	} else {
 		alert('Please enter a number between 8 and 128.');
+		throw new Error('User did not choos a lenth btween 8 and 128');
 	}
 	// ask is uppercase allowed.
 	const upperCaseAllowed = confirm(
@@ -59,3 +61,12 @@ function generatePassword() {
 	}
 	return newPassword;
 }
+
+//upon button click
+function writePassword() {
+	//calls generatePassword and prints it
+	var password = generatePassword();
+	var passwordText = document.querySelector('#password');
+	passwordText.value = password;
+}
+generateBtn.addEventListener('click', writePassword); // button with event listener
