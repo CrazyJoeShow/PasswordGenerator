@@ -26,7 +26,24 @@ function generatePassword() {
 		'Use lowercase letters in the new password?'
 	);
 	//ask if numbers are llowed.
+
 	const numbersAllowed = confirm('Use numbers in the new password?');
 	// ask if special characters are allowed.
-	const symbosAllowed = confirm('Use special characters in the new password?');
+
+	const symbolsAllowed = confirm('Use special characters in the new password?');
+	// make a string of the selected characters made by the user
+	//starting with the string they will printed to
+	var availableCharacters = '';
+	if (lowerCaseAllowed === true) {
+		availableCharacters = availableCharacters.concat(lowerCaseString);
+	}
+	if (upperCaseAllowed === true) {
+		availableCharacters = availableCharacters.concat(upperCaseCaseString);
+	}
+	if (numbersAllowed === true) {
+		availableCharacters = availableCharacters.concat(numbersString);
+	}
+	if (symbolsAllowed === true) {
+		availableCharacters = availableCharacters.concat(symbolsString);
+	}
 }
