@@ -46,4 +46,16 @@ function generatePassword() {
 	if (symbolsAllowed === true) {
 		availableCharacters = availableCharacters.concat(symbolsString);
 	}
+	// get random character form the array and add that to a string for each of the choices
+
+	var newPassword = '';
+
+	for (let i = 0; i < confirmedPassLength; i++) {
+		newPassword = newPassword.concat(
+			availableCharacters[
+				Math.floor(Math.random() * availableCharacters.length)
+			]
+		);
+	}
+	return newPassword;
 }
